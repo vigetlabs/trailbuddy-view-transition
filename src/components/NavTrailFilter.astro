@@ -1,0 +1,56 @@
+---
+interface Props {
+  options: {
+    label: 'hike' | 'run' | 'bike'
+    checked?: boolean
+  }[]
+}
+
+const { options } = Astro.props
+
+import hikeSvg from '@assets/svgs/hike.svg?raw'
+import runSvg from '../assets/svgs/run.svg?raw'
+import bikeSvg from '../assets/svgs/bike.svg?raw'
+---
+
+<fieldset class="flex items-center">
+  <legend class="sr-only">Trail Type</legend>
+
+  {
+    options.map(({ label, checked = false }) => {
+      function Svg(label: string) {
+        switch (label) {
+          case 'hike':
+            return <Fragment set:html={hikeSvg} />
+          case 'run':
+            return <Fragment set:html={runSvg} />
+          case 'bike':
+            return <Fragment set:html={bikeSvg} />
+        }
+      }
+
+      // TODO: can't dynamically add label -- to refactor
+
+      return (
+        <>
+          <input
+            class:list={[`peer/${label} hidden`]}
+            type="radio"
+            name="trail-type"
+            value={label}
+            id={`trail-type-${label}`}
+            checked={checked}
+          />
+
+          <label
+            for={`trail-type-${label}`}
+            class:list={[`peer-checked/${label}:text-red-orange`]}
+          >
+            {Svg(label)}
+            {label}
+          </label>
+        </>
+      )
+    })
+  }
+</fieldset>

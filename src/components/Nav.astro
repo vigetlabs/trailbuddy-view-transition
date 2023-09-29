@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets'
+import NavTrailFilter from './NavTrailFilter.astro'
+
+import logo from '../assets/images/logo.png'
+
+import bikeSvg from '../assets/svgs/bike.svg'
+---
+
+<nav class="flex items-center justify-between gap-6 h-24 px-10 bg-champagne">
+  <a href="/">
+    <Image src={logo} alt="Trailbuddy" width="190" />
+  </a>
+
+  <NavTrailFilter
+    options={[
+      { label: 'hike', checked: true },
+      { label: 'run' },
+      { label: 'bike' },
+    ]}
+  />
+</nav>
