@@ -13,7 +13,7 @@ import runSvg from '../assets/svgs/run.svg?raw'
 import bikeSvg from '../assets/svgs/bike.svg?raw'
 ---
 
-<fieldset class="flex items-center">
+<fieldset class="flex items-center gap-4 <sm:hidden">
   <legend class="sr-only">Trail Type</legend>
 
   {
@@ -29,12 +29,10 @@ import bikeSvg from '../assets/svgs/bike.svg?raw'
         }
       }
 
-      // TODO: can't dynamically add label -- to refactor
-
       return (
-        <>
+        <div>
           <input
-            class:list={[`peer/${label} hidden`]}
+            class="absolute opacity-0 [&:checked~label]:border-0 [&:checked~label]:bg-red-orange [&:checked~label]:text-white [&:focus-visible~label]:ring-2 [&:focus-visible~label]:ring-shark [&:focus-visible~label]:ring-offset-2 "
             type="radio"
             name="trail-type"
             value={label}
@@ -44,12 +42,12 @@ import bikeSvg from '../assets/svgs/bike.svg?raw'
 
           <label
             for={`trail-type-${label}`}
-            class:list={[`peer-checked/${label}:text-red-orange`]}
+            class="flex h-8 w-12 cursor-pointer items-center justify-center rounded-lg border-2 bg-white p-1.5 text-shark md:h-10 md:w-[70px] md:rounded-2xl [&_svg]:h-full"
           >
             {Svg(label)}
-            {label}
+            <span class="sr-only">{label}</span>
           </label>
-        </>
+        </div>
       )
     })
   }

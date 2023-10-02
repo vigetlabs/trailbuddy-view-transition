@@ -1,6 +1,8 @@
 ---
 import { ViewTransitions } from 'astro:transitions'
 
+import Nav from '@components/Nav.astro'
+
 const { title } = Astro.props
 ---
 
@@ -11,14 +13,35 @@ const { title } = Astro.props
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <link rel="stylesheet" href="https://use.typekit.net/pgm3sta.css" />
+
     <ViewTransitions />
   </head>
-  <body transition:animate="none">
+  <body transition:animate="none" class="bg-topography">
+    <Nav />
     <slot />
 
     <style is:global>
+      @font-face {
+        font-family: IBM Plex Mono;
+        src: url('/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
       body {
-        @apply bg-white;
+        @apply bg-white font-mono;
+        min-width: 320px;
+      }
+
+      .wrapper {
+        @apply max-w-8xl mx-auto max-w-7xl px-10;
+      }
+
+      .text-balance {
+        text-wrap: balance;
       }
     </style>
   </body>

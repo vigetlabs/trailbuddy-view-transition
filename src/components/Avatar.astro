@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets'
+
+const { user, postDate, slug, isStacked = false } = Astro.props
+
+function getInitials(name: string) {
+  const words = name.split(' ')
+  const initials = words.map((word) => word.charAt(0).toUpperCase())
+  return initials.join('')
+}
+---
+
+<div
+  class:list={[
+    'flex items-center gap-4',
+    { 'flex-col items-center justify-center text-center': isStacked },
+  ]}
+>
+  {
+    user.avatar ? (
+      <Image
+        src={user.avatar}
+        height={200}
+        width={200}
+        alt=""
+        class="outline-inherit h-10 w-10 rounded-full bg-black/20 outline outline-2 outline-offset-2"
+        aria-hidden="true"
+        transition:name={`avatar ${slug} image`}
+      />
+    ) : (
+      <div
+        class="outline-inherit text-inherit flex h-10 w-10 items-center justify-center rounded-full bg-black/20 text-lg font-bold outline outline-2 outline-offset-2"
+        aria-hidden="true"
+        transition:name={`avatar ${slug} image`}
+      >
+        {getInitials(user.name)}
+      </div>
+    )
+  }
+
+  <div class="flex flex-col text-sm" transition:name={`avatar ${slug} details`}>
+    <p class="text-sm font-semibold">{user.name}</p>
+    <p>
+      {postDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+    </p>
+  </div>
+</div>
