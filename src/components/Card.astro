@@ -1,6 +1,5 @@
 ---
 import Avatar from '@components/Avatar.astro'
-import { Image } from 'astro:assets'
 
 const { colors, user, postDate, title, subtitle, video, slug } = Astro.props
 ---
@@ -65,18 +64,26 @@ const { colors, user, postDate, title, subtitle, video, slug } = Astro.props
       transition:name={`card ${slug} media box`}
       transition:animate="initial"
     >
-      <!-- <video poster={`${video}-poster.jpg`} autoplay loop muted playsinline>
-            <source src={`${video}.webm`} type="video/webm" />
-            <source src={`${video}.mp4`} type="video/mp4" />
-          </video> -->
-      <Image
+      <video
+        class="-my-px"
+        poster={`${video}-poster.png`}
+        autoplay
+        loop
+        muted
+        playsinline
+        transition:persist={`card ${slug} media`}
+      >
+        <source src={`${video}.webm`} type="video/webm" />
+        <source src={`${video}.mp4`} type="video/mp4" />
+      </video>
+      <!-- <Image
         src={`${video}-poster.png`}
         alt=""
         class="-my-px"
         width={1745}
         height={1600}
         transition:persist={`card ${slug} media`}
-      />
+      /> -->
     </div>
   </article>
 </a>

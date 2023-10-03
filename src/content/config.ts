@@ -1,6 +1,6 @@
 import { defineCollection, z } from 'astro:content'
-// 2. Define your collection(s)
-const cardCollection = defineCollection({
+
+const hikeCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
@@ -16,9 +16,16 @@ const cardCollection = defineCollection({
       name: z.string(),
       avatar: z.string(),
     }),
+    metadata: z
+      .object({
+        distance: z.string().optional(),
+        altitude: z.string().optional(),
+        location: z.string().optional(),
+      })
+      .optional(),
   }),
 })
 
 export const collections = {
-  cards: cardCollection,
+  hikes: hikeCollection,
 }

@@ -37,11 +37,33 @@ const { title } = Astro.props
       }
 
       .wrapper {
-        @apply max-w-8xl mx-auto max-w-7xl px-10;
+        @apply mx-auto max-w-7xl px-5 sm:px-10;
       }
 
       .text-balance {
         text-wrap: balance;
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(20%);
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+          transform: translateY(20%);
+        }
       }
     </style>
   </body>

@@ -8,21 +8,12 @@ colors:
   text: 'text-shark'
   background: 'bg-quill-gray'
 user:
-  name: 'David Martin'
-  avatar: '/images/avatars/avatar-2.png'
----
-
-# Exploring the Grandeur: Angels Triumph Hike at the Grand Canyon
-
-_Subtitle: A Journey Through the Heart of the Canyon_
-
-<!--
-![Image of Angels Triumph Hike](image_url.jpg) -->
-
-_Date: [Insert Date]_
-
-_Author: [Your Name]_
-
+  name: 'Rover Barkton'
+  avatar: '/images/avatars/rover-barkton.jpg'
+metadata:
+  distance: '19.9 mi'
+  altitude: '2694 ft'
+  location: 'Arizona • USA'
 ---
 
 ## Introduction
@@ -68,6 +59,8 @@ Nestled within the rugged beauty of the Grand Canyon, the Angels Triumph Hike is
 ## The Angels Triumph Viewpoint
 
 [Detail the experience of reaching the Angels Triumph viewpoint. Describe the panoramic views and the emotions evoked.]
+
+![A photo taken from along the ridgeline of the Grand Canyon looking out across the valley through a light haze.](@assets/images/angel-triumph.jpg)
 
 ---
 

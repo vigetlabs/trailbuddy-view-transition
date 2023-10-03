@@ -18,14 +18,18 @@ module.exports = {
       white: '#FFFFFF',
       black: '#000000',
       'pearl-bush': '#E2DDD1',
-      'quill-gray': '#DBE0DA',
+      'quill-gray': '#DCE0D9',
       champagne: '#F3E6C4',
       'brandy-rose': '#C29087',
-      'pale-turquoise': '#B4F0F0',
+      'pale-turquoise': '#B0ECF4',
       matisse: '#366A9C',
-      orient: '#2C6488',
+      orient: '#266293',
       mirage: '#0B1D30',
-      shark: '#1D252D',
+      shark: {
+        DEFAULT: '#1D252D',
+        hover: '#2A3039',
+        active: '#0B1D30',
+      },
       'red-orange': {
         DEFAULT: '#FF4237',
         hover: '#FF6057',
@@ -50,5 +54,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require('./config/tailwind/fontVariationSettingsPlugin.js')],
+  plugins: [
+    require('./config/tailwind/fontVariationSettingsPlugin.js'),
+    require('@tailwindcss/typography'),
+  ],
 }

@@ -4,9 +4,9 @@ import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 import Card from '@components/Card.astro'
 
-const cards = await getCollection('cards')
+const hikes = await getCollection('hikes')
 
-cards.sort((a, b) => {
+hikes.sort((a, b) => {
   const aDate = new Date(a.data.postDate).getTime()
   const bDate = new Date(b.data.postDate).getTime()
   return bDate - aDate
@@ -22,7 +22,7 @@ cards.sort((a, b) => {
       Curated Adventures for Curious Travelers
     </h1>
     <div class="grid max-w-sm gap-10 lg:max-w-none lg:grid-cols-3">
-      {cards.map(({ data, slug }) => <Card {...data} slug={slug} />)}
+      {hikes.map(({ data, slug }) => <Card {...data} slug={slug} />)}
     </div>
   </main>
 </Layout>

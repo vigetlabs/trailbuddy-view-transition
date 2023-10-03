@@ -1,15 +1,15 @@
 ---
-import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
+import { slide } from 'astro:transitions'
 
 import Layout from '@layouts/Layout.astro'
 import Avatar from '@components/Avatar.astro'
+import Metadata from '@components/Metadata/Metadata.astro'
 
-import { getCollection } from 'astro:content'
-// 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-  const cardEntries = await getCollection('cards')
+  const hikeEntries = await getCollection('hikes')
 
-  return cardEntries.map((entry) => ({
+  return hikeEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
   }))
@@ -20,7 +20,7 @@ const { Content } = await entry.render()
 ---
 
 <Layout title=`${entry.data.title} - Cards`>
-  <main>
+  <main class="flex flex-col gap-14 pb-14">
     <header
       class:list={[
         'relative mx-auto flex min-h-[calc(100dvh-64px)] max-w-lg flex-col md:min-h-[calc(100dvh-96px)]',
@@ -37,7 +37,11 @@ const { Content } = await entry.render()
       >
       </div>
 
-      <a href="/" transition:animate="fade" class="absolute left-4 top-3 z-10">
+      <a
+        href="/"
+        transition:animate={slide({ duration: '0.5s' })}
+        class="hover:bg-shark-hover active:bg-shark-active absolute left-4 top-3 z-10 flex h-8 items-center rounded-lg bg-shark px-2 text-white focus-visible:outline-offset-2"
+      >
         <span class="sr-only">Go Back</span>
         <svg
           class="h-6 w-6"
@@ -63,7 +67,7 @@ const { Content } = await entry.render()
             isStacked
           />
           <button
-            class="absolute left-0 right-0 top-0 mx-auto flex h-4 w-4 translate-x-4 translate-y-8 items-center justify-center rounded-full bg-white text-black"
+            class="absolute bottom-0 right-0 top-0 mx-auto flex h-5 w-5 -translate-x-1.5 translate-y-5 items-center justify-center rounded-full bg-white text-black"
             transition:name={`card ${entry.slug} add`}
             transition:animate="initial"
             ><svg
@@ -94,6 +98,8 @@ const { Content } = await entry.render()
             </h2>
           </div>
 
+          {entry.data.metadata && <Metadata metadata={entry.data.metadata} />}
+
           {
             entry.data.description && (
               <p class="text-sm" transition:animate="fade">
@@ -108,25 +114,48 @@ const { Content } = await entry.render()
         transition:name={`card ${entry.slug} media box`}
         transition:animate="initial"
       >
-        <!-- <video poster={`${video}-poster.jpg`} autoplay loop muted playsinline>
-        <source src={`${video}.webm`} type="video/webm" />
-        <source src={`${video}.mp4`} type="video/mp4" />
-      </video> -->
-        <Image
+        <video
+          class="-my-px"
+          poster={`${entry.data.video}-poster.jpg`}
+          autoplay
+          loop
+          muted
+          playsinline
+          transition:persist={`card ${entry.slug} media`}
+        >
+          <source src={`${entry.data.video}.webm`} type="video/webm" />
+          <source src={`${entry.data.video}.mp4`} type="video/mp4" />
+        </video>
+        <!-- <Image
           src={`${entry.data.video}-poster.png`}
           alt=""
           class="-my-px"
           width={1745}
           height={1600}
           transition:persist={`card ${entry.slug} media`}
-        />
+        /> -->
       </div>
     </header>
-    <section
-      class:list={['wrapper py-8', entry.data.colors.bottomBackground]}
-      transition:animate="fade"
-    >
-      <Content />
+    <section class="wrapper" transition:animate="fade">
+      <div
+        class="prose max-w-4xl rounded-3xl border border-black/10 bg-white/80 p-10 py-8 shadow <sm:px-5"
+      >
+        <Content />
+      </div>
     </section>
   </main>
 </Layout>
+
+<style>
+  .test {
+    @media screen and (max-height: 100dvh) {
+      &::before {
+        content: '';
+        display: block;
+        height: 64px;
+        width: 100%;
+        background: red;
+      }
+    }
+  }
+</style>
