@@ -52,6 +52,9 @@ module.exports = {
       backgroundImage: {
         topography: "url('/images/topography-bg.png')",
       },
+      backgroundSize: {
+        500: '500px 500px',
+      },
     },
   },
   plugins: [

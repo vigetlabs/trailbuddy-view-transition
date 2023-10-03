@@ -18,7 +18,11 @@ const { title } = Astro.props
 
     <ViewTransitions />
   </head>
-  <body transition:animate="none" class="bg-topography">
+  <body
+    transition:animate="none"
+    transition:persist
+    class="bg-500 relative bg-topography"
+  >
     <Nav />
     <slot />
 
