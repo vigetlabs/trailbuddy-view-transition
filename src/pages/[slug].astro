@@ -140,17 +140,3 @@ const { Content } = await entry.render()
     </section>
   </main>
 </Layout>
-
-<style>
-  .test {
-    @media screen and (max-height: 100dvh) {
-      &::before {
-        content: '';
-        display: block;
-        height: 64px;
-        width: 100%;
-        background: red;
-      }
-    }
-  }
-</style>
