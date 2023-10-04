@@ -7,18 +7,16 @@ const { colors, user, postDate, title, subtitle, video, slug } = Astro.props
 <a
   href={slug}
   class:list={[
-    'relative flex flex-col rounded-3xl transition-transform',
+    'group relative flex flex-col rounded-3xl transition-transform duration-300 after:absolute after:inset-0 after:z-0 hover:scale-95 hover:after:scale-105 focus-visible:scale-100 focus-visible:outline-offset-4   focus-visible:hover:after:content-none',
     colors.text,
   ]}
   transition:name={`card ${slug} core`}
-  transition:animate="initial"
 >
   <article class="relative">
     <!-- card background -->
     <div
       class:list={['absolute inset-0 -z-10 rounded-3xl', colors.background]}
       transition:name={`card ${slug} background`}
-      transition:animate="initial"
     >
     </div>
 
@@ -28,7 +26,6 @@ const { colors, user, postDate, title, subtitle, video, slug } = Astro.props
         <button
           class="flex h-7 w-7 items-center justify-center rounded-full bg-white text-black"
           transition:name={`card ${slug} add`}
-          transition:animate="initial"
         >
           <svg
             class="h-5 w-5"
@@ -47,7 +44,6 @@ const { colors, user, postDate, title, subtitle, video, slug } = Astro.props
       <div
         class="flex flex-col text-center"
         transition:name={`card ${slug} heading`}
-        transition:animate="initial"
       >
         <h1
           class="text-balance font-sans text-3xl font-semibold uppercase leading-none"
@@ -62,7 +58,6 @@ const { colors, user, postDate, title, subtitle, video, slug } = Astro.props
     <div
       class="w-full overflow-hidden rounded-b-3xl"
       transition:name={`card ${slug} media box`}
-      transition:animate="initial"
     >
       <video
         class="-my-px"

@@ -27,20 +27,18 @@ const { Content } = await entry.render()
         entry.data.colors.text,
       ]}
       transition:name={`card ${entry.slug} core`}
-      transition:animate="initial"
     >
       <!-- card background -->
       <div
         class:list={['absolute inset-0 -z-10', entry.data.colors.background]}
         transition:name={`card ${entry.slug} background`}
-        transition:animate="initial"
       >
       </div>
 
       <a
         href="/"
         transition:animate={slide({ duration: '0.5s' })}
-        class="hover:bg-shark-hover active:bg-shark-active absolute left-4 top-3 z-10 flex h-8 items-center rounded-lg bg-shark px-2 text-white focus-visible:outline-offset-2"
+        class="absolute left-4 top-3 z-10 flex h-8 items-center rounded-lg bg-shark px-2 text-white hover:bg-shark-hover focus-visible:outline-offset-2 active:bg-shark-active"
       >
         <span class="sr-only">Go Back</span>
         <svg
@@ -69,7 +67,6 @@ const { Content } = await entry.render()
           <button
             class="absolute bottom-0 right-0 top-0 mx-auto flex h-5 w-5 -translate-x-1.5 translate-y-5 items-center justify-center rounded-full bg-white text-black"
             transition:name={`card ${entry.slug} add`}
-            transition:animate="initial"
             ><svg
               class="h-3 w-3"
               viewBox="0 0 15 15"
@@ -88,7 +85,6 @@ const { Content } = await entry.render()
           <div
             class="text-balance flex flex-col"
             transition:name={`card ${entry.slug} heading`}
-            transition:animate="initial"
           >
             <h1 class="text-4xl font-semibold uppercase leading-none">
               {entry.data.title}
@@ -112,7 +108,6 @@ const { Content } = await entry.render()
       <div
         class="mt-auto w-full overflow-hidden"
         transition:name={`card ${entry.slug} media box`}
-        transition:animate="initial"
       >
         <video
           class="-my-px"
