@@ -55,10 +55,7 @@ const { colors, user, postDate, title, subtitle, video, slug } = Astro.props
         </h2>
       </div>
     </header>
-    <div
-      class="w-full overflow-hidden rounded-b-3xl"
-      transition:name={`card ${slug} media box`}
-    >
+    <div class="w-full overflow-hidden rounded-b-3xl">
       <video
         class="-my-px"
         poster={`${video}-poster.png`}
