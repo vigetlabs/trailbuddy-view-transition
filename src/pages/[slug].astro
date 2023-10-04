@@ -105,7 +105,10 @@ const { Content } = await entry.render()
           }
         </div>
       </div>
-      <div class="mt-auto w-full overflow-hidden">
+      <div
+        class="mt-auto w-full overflow-hidden"
+        transition:name={`card ${entry.data.slug} media box`}
+      >
         <video
           class="-my-px"
           poster={`${entry.data.video}-poster.jpg`}
