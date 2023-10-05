@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content'
 
 import Layout from '@layouts/Layout.astro'
 import Card from '@components/Card.astro'
+import { fade } from 'astro:transitions'
 
 const hikes = await getCollection('hikes')
 
@@ -17,7 +18,7 @@ hikes.sort((a, b) => {
   <main class="wrapper flex flex-col items-center gap-10 py-14">
     <h1
       class="text-balance text-center font-sans text-4xl leading-tight"
-      transition:animate="fade"
+      transition:animate={fade({ duration: 500 })}
     >
       Curated Adventures for Curious Travelers
     </h1>
