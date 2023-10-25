@@ -1,8 +1,4 @@
 
-| :warning: WARNING |
-|:---------------------------|
-| The demo works best in browsers that support View Transitions (i.e. Chromium browsers), but also includes [default fallback support](https://docs.astro.build/en/guides/view-transitions/#fallback-control) for other browsers. Even if the browser does not support the View Transitions API, Astro will still provide in-browser navigation using one of the fallback options for a comparable experience. That said, it's recommended you view the demo while using a supported browser. |
-
 # Astro View Transition Demo
 
 [**Demo Link**](https://trailbuddy-astro-view-transition-demo.netlify.app/)
@@ -11,10 +7,16 @@ This is a demo project that showcases view transitions inside of an Astro projec
 
 To read more about the process behind setting up this project, check out our article [`LINK COMING SOON!`] which goes into greater detail on the design and development collaboration that went into building this demo.
 
+
+
 Want to jump into the code right away? Checkout the following links to get you straight into the code in a virtual sandbox:
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/~/github.com/vigetlabs/trailbuddy-view-transition)
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?skip_quickstart=true&machine=basicLinux32gb&repo=698412387&ref=main&geo=UsWest)
+
+| :warning: IMPORTANT |
+|:---------------------------|
+| The demo works best in browsers that support View Transitions (i.e. Chromium browsers), but also includes [default fallback support](https://docs.astro.build/en/guides/view-transitions/#fallback-control) for other browsers. Even if the browser does not support the View Transitions API, Astro will still provide in-browser navigation using one of the fallback options for a comparable experience. That said, it's recommended you view the demo while using a supported browser. |
 
 ## 🔥 Getting Started
 
