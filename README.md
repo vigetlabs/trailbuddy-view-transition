@@ -5,7 +5,7 @@
 
 This is a demo project that showcases view transitions inside of an Astro project using [Astro's opt-in client-side routing](https://docs.astro.build/en/guides/view-transitions/) made specifically for the new [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API).
 
-To read more about the process behind setting up this project, check out our article [`LINK COMING SOON!`] which goes into greater detail on the design and development collaboration that went into building this demo.
+To read more about the process behind setting up this project, check out [our article](https://www.viget.com/articles/how-we-designed-and-built-a-view-transition-demo/) which goes into greater detail on the design and development collaboration that went into building this demo.
 
 
 
@@ -76,6 +76,6 @@ Check out our [View Transitions in Astro](https://www.viget.com/articles/view-tr
 
 ## 🥇 Credits
 
-This demo project was developed by [Eric Fuhrmann](https://www.viget.com/about/team/efuhrmann/) and designed by [Andrew Greeson](https://www.viget.com/about/team/agreeson/). You can read more about that process here [`LINK COMING SOON!`].
+This demo project was developed by [Eric Fuhrmann](https://www.viget.com/about/team/efuhrmann/) and designed by [Andrew Greeson](https://www.viget.com/about/team/agreeson/). You can read more about that process [here](https://www.viget.com/articles/how-we-designed-and-built-a-view-transition-demo/).
 
 The view transition animation was inspired by [Maxi Ferreira's](https://twitter.com/charca) View Transition [demo](https://live-transitions.pages.dev/).
