@@ -20,7 +20,7 @@ const { title } = Astro.props
   </head>
   <body
     transition:animate="none"
-    class="bg-500 relative bg-topography bg-left-top"
+    class="relative bg-topography bg-500 bg-left-top"
   >
     <Nav />
     <slot />
@@ -37,6 +37,10 @@ const { title } = Astro.props
       body {
         @apply bg-white font-mono;
         min-width: 320px;
+      }
+
+      video {
+        mask-image: linear-gradient(to bottom, transparent, black 10px);
       }
 
       .wrapper {

@@ -21,7 +21,7 @@ module.exports = {
       'quill-gray': '#DCE0D9',
       champagne: '#F3E6C4',
       'brandy-rose': '#C29087',
-      'pale-turquoise': '#B0ECF4',
+      'pale-turquoise': '#b4f2f0',
       matisse: '#366A9C',
       orient: '#266293',
       mirage: '#0B1D30',
