@@ -24,11 +24,12 @@ const { colors, user, postDate, title, subtitle, video, slug } = Astro.props
       <div class="flex items-center justify-between gap-4">
         <Avatar user={user} postDate={postDate} slug={slug} />
         <button
-          class="flex h-7 w-7 items-center justify-center rounded-full bg-white text-black"
+          class="size-7 flex items-center justify-center rounded-full bg-white text-black"
           transition:name={`card ${slug} add`}
+          inert
         >
           <svg
-            class="h-5 w-5"
+            class="size-5"
             viewBox="0 0 15 15"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

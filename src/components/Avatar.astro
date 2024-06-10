@@ -26,8 +26,8 @@ function getInitials(name: string) {
         class:list={[
           'outline-inherit rounded-full bg-black/20 outline outline-2 outline-offset-2',
           {
-            'h-14 w-14': isStacked,
-            'h-10 w-10': !isStacked,
+            'size-14': isStacked,
+            'size-10': !isStacked,
           },
         ]}
         aria-hidden="true"
@@ -35,7 +35,7 @@ function getInitials(name: string) {
       />
     ) : (
       <div
-        class="outline-inherit text-inherit flex h-10 w-10 items-center justify-center rounded-full bg-black/20 text-lg font-bold outline outline-2 outline-offset-2"
+        class="outline-inherit text-inherit size-10 flex items-center justify-center rounded-full bg-black/20 text-lg font-bold outline outline-2 outline-offset-2"
         aria-hidden="true"
         transition:name={`avatar ${slug} image`}
       >
