@@ -9,7 +9,10 @@ import logo from '@assets/images/logo.png'
   class="bg-500 relative z-10 flex items-center justify-between gap-6 bg-champagne bg-topography bg-left-top px-4 py-4 md:px-10 md:py-7"
   transition:persist
 >
-  <a href="/" class="h-full shrink-0">
+  <a
+    href="/"
+    class="h-full shrink-0 rounded-sm outline-none outline-offset-2 focus-visible:outline-red-orange"
+  >
     <Image
       src={logo}
       alt="Trailbuddy"
@@ -28,7 +31,7 @@ import logo from '@assets/images/logo.png'
 
   <button
     type="button"
-    class="h-8 w-[90px] rounded-xl bg-red-orange text-sm uppercase leading-none text-white transition-colors hover:bg-red-orange-hover active:bg-red-orange-active md:h-10 md:w-[120px] md:rounded-2xl md:text-base"
+    class="h-8 w-[90px] rounded-xl bg-red-orange text-sm uppercase leading-none text-white outline-none outline-offset-2 transition-colors hover:bg-red-orange-hover focus-visible:outline-red-orange active:bg-red-orange-active md:h-10 md:w-[120px] md:rounded-2xl md:text-base"
     >Login</button
   >
 </nav>

@@ -38,7 +38,7 @@ const { Content } = await entry.render()
       <a
         href="/"
         transition:animate={slide({ duration: '0.5s' })}
-        class="absolute left-4 top-3 z-10 flex h-8 items-center rounded-lg bg-shark px-2 text-white hover:bg-shark-hover focus-visible:outline-offset-2 active:bg-shark-active"
+        class="focus-visible:outline-inherit absolute left-4 top-3 z-10 flex h-8 items-center rounded-lg bg-shark px-2 text-white hover:bg-shark-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-orange active:bg-shark-active"
       >
         <span class="sr-only">Go Back</span>
         <svg
@@ -65,7 +65,7 @@ const { Content } = await entry.render()
             isStacked
           />
           <button
-            class="size-5 absolute bottom-0 right-0 top-0 mx-auto flex -translate-x-1.5 translate-y-5 items-center justify-center rounded-full bg-white text-black"
+            class="focus-visible:outline-inherit absolute bottom-0 right-0 top-0 mx-auto flex size-5 -translate-x-1.5 translate-y-5 items-center justify-center rounded-full bg-white text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-orange"
             transition:name={`card ${entry.slug} add`}
             ><svg
               class="size-3"

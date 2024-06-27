@@ -7,7 +7,7 @@ const { colors, user, postDate, title, subtitle, video, slug } = Astro.props
 <a
   href={slug}
   class:list={[
-    'group relative flex flex-col rounded-3xl transition-transform duration-300 after:absolute after:inset-0 after:z-0 hover:scale-95 hover:after:scale-105 focus-visible:scale-100 focus-visible:outline-offset-4   focus-visible:hover:after:content-none',
+    'group relative flex flex-col rounded-3xl transition-transform duration-300 after:absolute after:inset-0 after:z-0 hover:scale-95 hover:after:scale-105 focus-visible:scale-100 focus-visible:outline-offset-4 focus-visible:outline-red-orange focus-visible:hover:after:content-none',
     colors.text,
   ]}
   transition:name={`card ${slug} core`}
